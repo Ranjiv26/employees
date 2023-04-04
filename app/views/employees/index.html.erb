@@ -1,42 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Employees</h1>
-<head>
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100;
-  }
-th, td {
-  text-align: left;
-  padding: 8px;
-}
+<h1>Employees Details</h1>
 
-tr:nth-child(even){backgroung-color: #f2f2f2}
-th {
-  background-color: #04AA6D;
-  color: white;
-}
 
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-</style>
-</head>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th style="text-align:left">Name</th>
     <th>Emp_ID</th>
     <th>Gender</th>
     <th>Age</th>
@@ -50,7 +20,7 @@ th {
 <tbody>
 <% @employees.each do |employee| %>
   <tr>
-    <td><%= employee.name %></td>
+    <td style="text-align:left"><%= employee.name %></td>
     <td><%= employee.emp_id %></td>
     <td><%= employee.gender %></td>
     <td><%= employee.age %></td>
@@ -60,12 +30,12 @@ th {
     <td><%= employee.address %></td>
     <td><%= link_to 'Show', employee %></td>
     <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure'} %></td>
+    <td><%= button_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure'} %></td>
   </tr>
   <% end %>
 </tbody>
 
 </table>
 
-
+<br>
 <%= link_to "New employee", new_employee_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_31_180505) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_04_112335) do
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "emp_id"
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_180505) do
     t.integer "age"
     t.string "designation"
     t.string "mail_id"
-    t.decimal "mobile"
+    t.string "mobile"
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
